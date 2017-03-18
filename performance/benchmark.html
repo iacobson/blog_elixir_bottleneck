@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Benchee Report</title>
+    <meta charset="utf-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <h1>benchee report</h1>
+      
+      <span class="version-note">
+        Elixir 1.4.1, Erlang 19.2
+      </span>
+    </div>
+
+    <article>
+      <h2>
+        Comparison
+        <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#comparison">
+          <i
+          class="benchee-help-icon icon-question-circle-o"
+          title="Comparisons of the different benchmarking jobs.
+  For Iterations per Second higher is better, the black whiskers denote standard deviation. otherwise it is runtime so lower is better.
+  The Box Plot shows a distribution of run times with the median and outliers."
+          ></i>
+        </a>
+      </h2>
+      <section>
+        <h3>Data Table</h3>
+        <table>
+          <thead>
+            <tr>
+              <th class="text-left">Name</th>
+              <th>Iterations per Second</th>
+              <th>Average</th>
+              <th>Deviation</th>
+              <th>median</th>
+              <th>minimum</th>
+              <th>maximum</th>
+              <th>Sample size</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="text-left"><a href="#get_v3">get_v3</a></td>
+                <td>2.43</td>
+                <td>412219.41 μs</td>
+                <td>±12.22%</td>
+                <td>400143.00 μs</td>
+                <td>366607.00 μs</td>
+                <td>638719.00 μs</td>
+                <td>49</td>
+              </tr>
+            
+              <tr>
+                <td class="text-left"><a href="#get_v2">get_v2</a></td>
+                <td>1.39</td>
+                <td>717838.11 μs</td>
+                <td>±15.55%</td>
+                <td>681824.00 μs</td>
+                <td>631547.00 μs</td>
+                <td>1141705.00 μs</td>
+                <td>28</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </section>
+
+      <section class="benchee-plot-container">
+        <div id="ips-comparison" class="job-count-2 plot"></div>
+      </section>
+
+      <section class="benchee-plot-container">
+        <div id="box-plot" class="job-count-2 plot"></div>
+      </section>
+    </article>
+
+    
+      <article>
+        <h2>
+          <a name="get_v3"></a>
+          get_v3
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for get_v3.
+  Run Times Histpgram shows the distribution of occurences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section class="benchee-plot-container">
+          <div class="sorted-run-times plot" data-job-name="get_v3"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div class="raw-run-times plot" data-job-name="get_v3"></div>
+        </section>
+      </article>
+    
+      <article>
+        <h2>
+          <a name="get_v2"></a>
+          get_v2
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for get_v2.
+  Run Times Histpgram shows the distribution of occurences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section class="benchee-plot-container">
+          <div class="sorted-run-times plot" data-job-name="get_v2"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div class="raw-run-times plot" data-job-name="get_v2"></div>
+        </section>
+      </article>
+    
+
+    <script src="assets/javascripts/plotly-1.20.5.min.js"></script>
+    <script src="assets/javascripts/benchee.js"></script>
+
+    <script>
+      var suite      = {"statistics":{"get_v3":{"std_dev_ratio":0.12220435628030571,"std_dev_ips":0.29645464007823946,"std_dev":50375.00742084043,"sample_size":49,"minimum":366607,"median":400143.0,"maximum":638719,"ips":2.4258925712782933,"average":412219.4081632653},"get_v2":{"std_dev_ratio":0.15548211088041727,"std_dev_ips":0.21659773886798508,"std_dev":111610.98416897458,"sample_size":28,"minimum":631547,"median":681824.0,"maximum":1141705,"ips":1.3930717665299284,"average":717838.1071428572}},"sort_order":["get_v3","get_v2"],"run_times":{"get_v3":[541271,393531,383458,400143,424256,401132,423233,497469,485411,373528,377164,387200,395782,417320,531321,401673,409489,398815,405483,378490,403084,394620,385303,506077,638719,404531,394379,400235,421027,380905,400526,376306,409654,378133,384311,384963,385362,405772,413393,408749,391866,384314,377040,401975,389143,405558,366607,381091,398939],"get_v2":[823075,1141705,768182,681302,712071,696130,685828,706167,680446,675582,662825,657940,691882,726745,760453,676261,663649,691831,679529,672278,645701,682346,1037701,678501,631547,634550,640035,695205]}};
+      var runTimes   = suite.run_times;
+      var statistics = suite.statistics;
+      var sortOrder  = suite.sort_order;
+
+      var inputHeadline = ""
+
+      drawIpsComparisonChart(statistics, sortOrder, inputHeadline);
+      drawComparisonBoxPlot(runTimes, sortOrder, inputHeadline);
+      drawRawRunTimeCharts(runTimes, inputHeadline);
+      drawRunTimeHistograms(runTimes, inputHeadline);
+    </script>
+  </body>
+</html>

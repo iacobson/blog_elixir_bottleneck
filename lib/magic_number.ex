@@ -2,7 +2,7 @@ defmodule MagicNumber do
   import ExProf.Macro
   alias MagicNumber.Constant
   alias MagicNumber.Variable
-  @list (1..1_000)
+  @list (1..10)
 
   def get_v1 do
     @list
@@ -37,9 +37,15 @@ defmodule MagicNumber do
   def benchmark do
     Benchee.run(
       %{
+        "get_v2" => fn -> get_v2() end,
         "get_v3" => fn -> get_v3() end,
-        "get_v4" => fn -> get_v4() end,
-      }, time: 10
+      },
+      time: 20,
+      formatters: [
+        &Benchee.Formatters.HTML.output/1,
+        &Benchee.Formatters.Console.output/1
+      ],
+      html: [file: "performance/benchmark.html"],
     )
   end
 
@@ -47,6 +53,10 @@ defmodule MagicNumber do
     profile do
       get_v3()
     end
+  end
+
+  def flamegraph do
+    :eflame.apply(MagicNumber, :get_v1, [])
   end
 
 end

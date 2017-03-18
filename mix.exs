@@ -29,8 +29,10 @@ defmodule MagicNumber.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:exprof,   "~> 0.2.0", only: :dev,   runtime: false},
-      {:benchee,  "~> 0.6",   only: :dev,   runtime: false}
+      {:exprof,       "~> 0.2.0", only: :dev,   runtime: false},
+      {:benchee,      "~> 0.6",   only: :dev,   runtime: false},
+      {:benchee_html, "~> 0.1.0", only: :dev,   runtime: false},
+      {:eflame,       "~> 1.0",   only: :dev,   runtime: false}
     ]
   end
 end
