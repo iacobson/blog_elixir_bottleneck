@@ -2,10 +2,14 @@ defmodule MagicNumber.Variable do
   @interval (1..500_000)
 
   def calculate(var, constant) do
-    @interval
-    |> Enum.filter(&(rem(&1, var) == 0))
-    |> constant_divisors(constant)
-    |> average_restult()
+    Monitor.update(:input)
+    result =
+      @interval
+      |> Enum.filter(&(rem(&1, var) == 0))
+      |> constant_divisors(constant)
+      |> average_restult()
+    Monitor.update(:output)
+    result
   end
 
   def benchmark(var, constant) do
