@@ -1,8 +1,8 @@
 # plot.gp
-set terminal png font "Arial,14" size 1400,1000
+set terminal png font "Arial,20" size 1200,600
 set output "monitor.png"
 
-set title "Monitor the variable calculation in the MagicNumber"
+set title "Variable Calculation"
 set xlabel "Time (ms)"
 set ylabel "Variables processed"
 set key top left

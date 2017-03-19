@@ -28,7 +28,7 @@ defmodule MagicNumber do
   def get_v4 do
     constant = Constant.calculate()
     @list
-    |> Task.async_stream(Variable, :calculate, [constant], timeout: :infinity, max_concurrency: 60)
+    |> Task.async_stream(Variable, :calculate, [constant], timeout: :infinity, max_concurrency: 120)
     |> Stream.map(fn({:ok, result}) -> result end)
     |> Enum.to_list()
     |> Enum.reduce(0, &(&1 + &2))
