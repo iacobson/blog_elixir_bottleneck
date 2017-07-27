@@ -7,7 +7,7 @@ defmodule MagicNumber.Variable do
       @interval
       |> Enum.filter(&(rem(&1, var) == 0))
       |> constant_divisors(constant)
-      |> average_restult()
+      |> average_result()
     Monitor.update(:output)
     result
   end
@@ -27,9 +27,9 @@ defmodule MagicNumber.Variable do
     |> Enum.filter(&(rem(constant, &1) == 0))
   end
 
-  defp average_restult([]), do: 0
+  defp average_result([]), do: 0
 
-  defp average_restult(list) do
+  defp average_result(list) do
     result = Enum.sum(list) / Enum.count(list)
     Float.round(result)
   end
